@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player Registration</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>Player Registration</h1>
+
+        <form id="playerForm">
+
+            <div class="form-group">
+                <label>Full Name *</label>
+                <input type="text" id="fullName" required>
+            </div>
+
+            <div class="form-group">
+                <label>Mobile Number *</label>
+                <input type="tel" id="mobile" maxlength="10" required>
+            </div>
+
+            <div class="form-group">
+                <label>Team *</label>
+                <select id="team" required>
+                    <option value="">Select Team</option>
+                    <option>Royal Warriors</option>
+                    <option>Thunder Kings</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Role *</label>
+                <select id="role" required>
+                    <option value="">Select Role</option>
+                    <option>Batsman</option>
+                    <option>Bowler</option>
+                    <option>All-Rounder</option>
+                    <option>Wicket Keeper</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Batting Style</label>
+                <select id="battingStyle">
+                    <option>Right Hand</option>
+                    <option>Left Hand</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Bowling Style</label>
+                <select id="bowlingStyle">
+                    <option>Right Arm Fast</option>
+                    <option>Left Arm Fast</option>
+                    <option>Right Arm Spin</option>
+                    <option>Left Arm Spin</option>
+                    <option>Does Not Bowl</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Registration Fee Paid</label>
+                <select id="feePaid">
+                    <option>Yes</option>
+                    <option>No</option>
+                </select>
+            </div>
+
+            <button type="submit">Register Player</button>
+
+        </form>
+
+    </div>
+
+    <script src="js/player-registration.js"></script>
+
+</body>
+</html>
