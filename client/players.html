@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Players | CricManager</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar">
+
+            <div class="logo">🏏 CricManager</div>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="teams.html">Teams</a></li>
+                <li><a href="players.html" class="active">Players</a></li>
+                <li><a href="admin.html">Admin</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+    <main class="players-page">
+
+        <h1>Registered Players</h1>
+
+        <div class="search-box">
+
+            <input
+                type="text"
+                id="searchPlayer"
+                placeholder="Search player by name...">
+
+        </div>
+
+        <table class="players-table">
+
+            <thead>
+
+                <tr>
+                    <th>Name</th>
+                    <th>Mobile</th>
+                    <th>Age</th>
+                    <th>Team</th>
+                    <th>Role</th>
+                    <th>City</th>
+                    <th>Action</th>
+                </tr>
+
+            </thead>
+
+            <tbody id="playerTableBody">
+
+            </tbody>
+
+        </table>
+
+    </main>
+
+    <footer>
+        <p>© 2026 CricManager | Cricket Tournament Management System</p>
+    </footer>
+
+    <script src="js/players.js"></script>
+
+</body>
+
+</html>

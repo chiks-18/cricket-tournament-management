@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Teams | CricManager</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+
+            <div class="logo">🏏 CricManager</div>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="teams.html" class="active">Teams</a></li>
+                <li><a href="players.html">Players</a></li>
+                <li><a href="admin.html">Admin</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+    <main class="teams-page">
+
+        <section class="team-form-section">
+
+            <h1>Team Management</h1>
+
+            <p>Add teams participating in the tournament.</p>
+
+            <form id="teamForm">
+
+                <div class="form-group">
+                    <label>Team Name</label>
+                    <input
+                        type="text"
+                        id="teamName"
+                        placeholder="Enter Team Name"
+                        required>
+                </div>
+
+                <button class="btn" type="submit">
+                    Add Team
+                </button>
+
+            </form>
+
+        </section>
+
+        <section class="team-list-section">
+
+            <h2>Registered Teams</h2>
+
+            <div id="teamList" class="team-list">
+
+                <!-- Teams will appear here -->
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 CricManager | Cricket Tournament Management System</p>
+    </footer>
+
+    <script src="js/teams.js"></script>
+
+</body>
+
+</html>

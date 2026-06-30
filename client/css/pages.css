@@ -1,0 +1,276 @@
+/* ===========================
+   Registration Page
+=========================== */
+
+.register-page{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:60px 20px;
+}
+
+.form-container{
+    width:100%;
+    max-width:600px;
+    background:#ffffff;
+    padding:40px;
+    border-radius:12px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+.form-container h1{
+    text-align:center;
+    margin-bottom:10px;
+    color:#0F172A;
+}
+
+.form-container p{
+    text-align:center;
+    margin-bottom:30px;
+    color:#64748B;
+}
+
+.form-group{
+    margin-bottom:20px;
+}
+
+.form-group label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:500;
+}
+
+.form-group input,
+.form-group select{
+    width:100%;
+    padding:12px;
+    border:1px solid #CBD5E1;
+    border-radius:8px;
+    font-size:15px;
+    outline:none;
+}
+
+.form-group input:focus,
+.form-group select:focus{
+    border-color:#2563EB;
+}
+
+/* ===============================
+   Teams Page
+================================ */
+
+.teams-page{
+
+    max-width:1100px;
+
+    margin:40px auto;
+
+    padding:20px;
+}
+
+.team-form-section{
+
+    background:#ffffff;
+
+    padding:30px;
+
+    border-radius:12px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    margin-bottom:40px;
+}
+
+.team-form-section h1{
+
+    margin-bottom:10px;
+}
+
+.team-form-section p{
+
+    color:#64748B;
+
+    margin-bottom:25px;
+}
+
+.team-list{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fill,minmax(250px,1fr));
+
+    gap:20px;
+}
+
+.team-card{
+
+    background:#ffffff;
+
+    border-radius:12px;
+
+    padding:20px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+}
+
+.team-card h3{
+
+    font-size:18px;
+}
+
+.delete-btn{
+
+    background:#EF4444;
+
+    color:white;
+
+    border:none;
+
+    padding:8px 14px;
+
+    border-radius:6px;
+
+    cursor:pointer;
+}
+
+.delete-btn:hover{
+
+    background:#DC2626;
+}
+/* ===========================
+   Players Page
+=========================== */
+
+.players-page{
+
+    max-width:1200px;
+
+    margin:40px auto;
+
+    padding:20px;
+}
+
+.players-page h1{
+
+    margin-bottom:30px;
+}
+
+.search-box{
+
+    margin-bottom:20px;
+}
+
+.search-box input{
+
+    width:100%;
+
+    padding:12px;
+
+    border:1px solid #CBD5E1;
+
+    border-radius:8px;
+}
+
+.players-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    background:#fff;
+
+    border-radius:12px;
+
+    overflow:hidden;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.players-table th{
+
+    background:#0F172A;
+
+    color:white;
+
+    padding:15px;
+}
+
+.players-table td{
+
+    padding:15px;
+
+    border-bottom:1px solid #eee;
+
+    text-align:center;
+}
+
+.players-table tr:hover{
+
+    background:#F8FAFC;
+}
+
+/* ===============================
+   Admin Dashboard
+=============================== */
+
+.dashboard{
+
+    max-width:1200px;
+
+    margin:40px auto;
+
+    padding:20px;
+}
+
+.dashboard h1{
+
+    margin-bottom:30px;
+}
+
+.dashboard-cards{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+    gap:25px;
+
+    margin-bottom:40px;
+}
+
+.dashboard-card{
+
+    background:#fff;
+
+    padding:30px;
+
+    border-radius:12px;
+
+    text-align:center;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+.dashboard-card h2{
+
+    font-size:42px;
+
+    color:#2563EB;
+
+    margin-bottom:10px;
+}
+
+.dashboard-actions{
+
+    display:flex;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+}
