@@ -4,6 +4,7 @@
 <head>
 
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>CricManager Dashboard</title>
@@ -14,15 +15,19 @@
 
 <body>
 
-<div class="wrapper">
+<div class="container">
 
-    <!-- Sidebar -->
+    <!-- ================= Sidebar ================= -->
 
     <div class="sidebar">
 
-        <h2>🏏 CricManager</h2>
+        <div class="logo">
 
-        <ul>
+            🏏 <span>CricManager</span>
+
+        </div>
+
+        <ul class="menu">
 
             <li><a href="dashboard.html" class="active">🏠 Dashboard</a></li>
 
@@ -32,7 +37,7 @@
 
             <li><a href="player-registration.html">📝 Register Player</a></li>
 
-            <li><a href="player-list.html">🏏 Player List</a></li>
+            <li><a href="player-list.html">🏏 Players</a></li>
 
             <li><a href="#">📅 Fixtures</a></li>
 
@@ -48,47 +53,123 @@
 
     </div>
 
-    <!-- Main Content -->
+    <!-- ================= Main ================= -->
 
     <div class="main">
 
-        <div class="topbar">
+        <!-- Header -->
+
+        <div class="header">
 
             <h2>Dashboard</h2>
 
+            <div class="profile">
+
+                Welcome, Admin 👋
+
+            </div>
+
         </div>
 
-        <div class="dashboard">
+        <!-- Content -->
 
-            <div class="card">
+        <div class="content">
 
-                <h1 id="totalTeams">8</h1>
+            <!-- Cards -->
 
-                <p>Total Teams</p>
+            <div class="cards">
+
+                <div class="card">
+
+                    <h3>Total Teams</h3>
+
+                    <h1 id="totalTeams">8</h1>
+
+                </div>
+
+                <div class="card">
+
+                    <h3>Total Players</h3>
+
+                    <h1 id="totalPlayers">96</h1>
+
+                </div>
+
+                <div class="card">
+
+                    <h3>Matches</h3>
+
+                    <h1>28</h1>
+
+                </div>
+
+                <div class="card">
+
+                    <h3>Prize Pool</h3>
+
+                    <h1>₹50K</h1>
+
+                </div>
 
             </div>
 
-            <div class="card">
+            <!-- Recent Teams -->
 
-                <h1 id="totalPlayers">96</h1>
+            <div class="table-box">
 
-                <p>Total Players</p>
+                <h2 style="margin-bottom:20px;">Recent Teams</h2>
 
-            </div>
+                <table>
 
-            <div class="card">
+                    <thead>
 
-                <h1 id="feesCollected">₹48,000</h1>
+                        <tr>
 
-                <p>Fees Collected</p>
+                            <th>ID</th>
 
-            </div>
+                            <th>Team Name</th>
 
-            <div class="card">
+                            <th>Status</th>
 
-                <h1 id="recentRegistrations">5</h1>
+                        </tr>
 
-                <p>Recent Registrations</p>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+
+                            <td>1</td>
+
+                            <td>Royal Warriors</td>
+
+                            <td>Registered</td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>2</td>
+
+                            <td>Thunder Kings</td>
+
+                            <td>Registered</td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>3</td>
+
+                            <td>Power Hitters</td>
+
+                            <td>Registered</td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
 
             </div>
 

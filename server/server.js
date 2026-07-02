@@ -2,12 +2,12 @@ const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
 
-// Database Connection
-//require("./database");
+// Database
 require("./config/database");
 
 // Routes
 const teamRoutes = require("./routes/teams");
+const tournamentRoutes = require("./routes/tournament");
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -18,8 +18,9 @@ app.use(express.json());
 
 // API Routes
 app.use("/api/teams", teamRoutes);
+app.use("/api/tournaments", tournamentRoutes);
 
-// Test Route
+// Root Route
 app.get("/", (req, res) => {
     res.json({
         success: true,
