@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Player | CricManager</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+
+            <div class="logo">🏏 CricManager</div>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="register.html" class="active">Register</a></li>
+                <li><a href="teams.html">Teams</a></li>
+                <li><a href="players.html">Players</a></li>
+                <li><a href="admin.html">Admin</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+    <main class="register-page">
+
+        <div class="form-container">
+
+            <h1>Player Registration</h1>
+            <p>Fill in the player details below.</p>
+
+            <form id="playerForm">
+
+                <div class="form-group">
+                    <label for="playerName">Player Name</label>
+                    <input type="text" id="playerName" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="mobile">Mobile Number</label>
+                    <input type="tel" id="mobile" maxlength="10" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="age">Age</label>
+                    <input type="number" id="age" min="10" max="60" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="team">Team</label>
+                    <select id="team" required>
+                        <option value="">Select Team</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="role">Playing Role</label>
+                    <select id="role" required>
+                        <option value="">Select Role</option>
+                        <option>Batsman</option>
+                        <option>Bowler</option>
+                        <option>All-Rounder</option>
+                        <option>Wicket Keeper</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="battingStyle">Batting Style</label>
+                    <select id="battingStyle" required>
+                        <option value="">Select Batting Style</option>
+                        <option>Right Hand</option>
+                        <option>Left Hand</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="bowlingStyle">Bowling Style</label>
+                    <input type="text" id="bowlingStyle" placeholder="Optional">
+                </div>
+
+                <div class="form-group">
+                    <label for="city">Village / City</label>
+                    <input type="text" id="city" required>
+                </div>
+
+                <button type="submit" class="btn">
+                    Register Player
+                </button>
+
+            </form>
+
+        </div>
+
+    </main>
+
+    <footer>
+        <p>© 2026 CricManager | Cricket Tournament Management System</p>
+    </footer>
+
+    <script src="js/register.js"></script>
+
+</body>
+
+</html>

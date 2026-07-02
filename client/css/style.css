@@ -1,0 +1,62 @@
+.input-box{
+
+    width:350px;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    font-size:16px;
+    margin-right:10px;
+
+}
+
+.search-box{
+
+    width:250px;
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:8px;
+
+}
+
+.table-header{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+}
+
+.edit-btn{
+
+    background:#10b981;
+    color:white;
+    border:none;
+    padding:8px 12px;
+    border-radius:6px;
+    cursor:pointer;
+    margin-right:8px;
+
+}
+
+.delete-btn{
+
+    background:#ef4444;
+    color:white;
+    border:none;
+    padding:8px 12px;
+    border-radius:6px;
+    cursor:pointer;
+
+}
+
+.edit-btn:hover{
+
+    opacity:.9;
+
+}
+
+.delete-btn:hover{
+
+    opacity:.9;
+
+}

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teams | CricManager</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="sidebar">
+
+        <div class="logo">
+            🏏 <span>CricManager</span>
+        </div>
+
+        <ul class="menu">
+            <li><a href="dashboard.html">🏠 Dashboard</a></li>
+            <li><a href="tournament.html">🏆 Tournament</a></li>
+            <li><a href="teams.html" class="active">👥 Teams</a></li>
+            <li><a href="player-registration.html">📝 Register Player</a></li>
+            <li><a href="player-list.html">🏏 Players</a></li>
+            <li><a href="#">📅 Fixtures</a></li>
+            <li><a href="#">📊 Points Table</a></li>
+            <li><a href="#">🎯 Live Score</a></li>
+            <li><a href="#">📈 Reports</a></li>
+        </ul>
+
+    </div>
+
+    <div class="main">
+
+        <div class="header">
+            <h2>Team Management</h2>
+            <div class="profile">Admin</div>
+        </div>
+
+        <div class="content">
+
+            <div class="cards">
+
+                <div class="card">
+                    <h3>Total Teams</h3>
+                    <h1 id="teamCount">0</h1>
+                </div>
+
+            </div>
+
+            <br>
+
+            <div class="table-box">
+
+                <div class="table-header">
+
+                    <h2 id="formTitle">Add Team</h2>
+
+                    <button
+                        class="btn"
+                        id="cancelEdit"
+                        style="display:none;background:#ef4444;">
+                        Cancel
+                    </button>
+
+                </div>
+
+                <br>
+
+                <form id="teamForm">
+
+                    <input
+                        type="text"
+                        id="team_name"
+                        placeholder="Enter Team Name"
+                        class="input-box"
+                        required>
+
+                    <button
+                        class="btn"
+                        id="submitBtn">
+                        Add Team
+                    </button>
+
+                </form>
+
+            </div>
+
+            <br>
+
+            <div class="table-box">
+
+                <div class="table-header">
+
+                    <h2>Registered Teams</h2>
+
+                    <input
+                        type="text"
+                        id="searchTeam"
+                        placeholder="Search Team..."
+                        class="search-box">
+
+                </div>
+
+                <br>
+
+                <table>
+
+                    <thead>
+
+                    <tr>
+
+                        <th>ID</th>
+                        <th>Team Name</th>
+                        <th>Action</th>
+
+                    </tr>
+
+                    </thead>
+
+                    <tbody id="teamTable">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="js/teams.js"></script>
+
+</body>
+
+</html>
