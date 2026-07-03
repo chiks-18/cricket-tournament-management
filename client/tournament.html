@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tournament | CricManager</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="sidebar">
+
+        <div class="logo">
+            🏏 <span>CricManager</span>
+        </div>
+
+        <ul class="menu">
+            <li><a href="dashboard.html">🏠 Dashboard</a></li>
+            <li><a href="tournament.html" class="active">🏆 Tournament</a></li>
+            <li><a href="teams.html">👥 Teams</a></li>
+            <li><a href="player-registration.html">📝 Register Player</a></li>
+            <li><a href="player-list.html">🏏 Players</a></li>
+            <li><a href="#">📅 Fixtures</a></li>
+            <li><a href="#">📊 Points Table</a></li>
+            <li><a href="#">🎯 Live Scoring</a></li>
+            <li><a href="#">📈 Reports</a></li>
+        </ul>
+
+    </div>
+
+    <div class="main">
+
+        <div class="header">
+            <h2>Tournament Management</h2>
+            <div class="profile">Admin</div>
+        </div>
+
+        <div class="content">
+
+            <div class="table-box">
+
+                <h2>Create Tournament</h2>
+
+                <br>
+
+                <form id="tournamentForm">
+
+                    <input class="input-box" type="text" id="tournament_name" placeholder="Tournament Name" required>
+
+                    <input class="input-box" type="text" id="organizer_name" placeholder="Organizer Name" required>
+
+                    <input class="input-box" type="text" id="location" placeholder="Location" required>
+
+                    <br><br>
+
+                    <label>Start Date</label><br>
+                    <input class="input-box" type="date" id="start_date" required>
+
+                    <label>End Date</label><br>
+                    <input class="input-box" type="date" id="end_date" required>
+
+                    <br><br>
+
+                    <select class="input-box" id="ball_type">
+                        <option value="Tennis">Tennis</option>
+                        <option value="Leather">Leather</option>
+                    </select>
+
+                    <select class="input-box" id="match_type">
+                        <option value="League">League</option>
+                        <option value="Knockout">Knockout</option>
+                        <option value="League + Knockout">League + Knockout</option>
+                    </select>
+
+                    <br><br>
+
+                    <input class="input-box" type="number" id="overs" placeholder="Overs" required>
+
+                    <input class="input-box" type="number" id="max_teams" placeholder="Maximum Teams" required>
+
+                    <br><br>
+
+                    <input class="input-box" type="number" id="entry_fee" placeholder="Entry Fee">
+
+                    <input class="input-box" type="number" id="prize_pool" placeholder="Prize Pool">
+
+                    <br><br>
+
+                    <button class="btn">Create Tournament</button>
+
+                </form>
+
+            </div>
+
+            <br>
+
+            <div class="table-box">
+
+                <h2>Tournaments</h2>
+
+                <br>
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Location</th>
+                            <th>Teams</th>
+                            <th>Status</th>
+                            <th>Action</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="tournamentTable">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="js/tournament.js"></script>
+
+</body>
+
+</html>

@@ -1,22 +1,58 @@
-// Dummy data (will come from MySQL later)
+const TEAM_API = "http://localhost:5000/api/teams";
+const TOURNAMENT_API = "http://localhost:5000/api/tournaments";
 
-const dashboardData = {
+async function loadDashboard() {
 
-    totalTeams: 8,
-    totalPlayers: 96,
-    feesCollected: 48000,
-    recentRegistrations: 5
+    try {
 
-};
+        // Load Teams
+        const teamResponse = await fetch(TEAM_API);
+        const teamResult = await teamResponse.json();
 
-document.getElementById("totalTeams").textContent =
-dashboardData.totalTeams;
+        const teams = teamResult.success ? teamResult.data : [];
 
-document.getElementById("totalPlayers").textContent =
-dashboardData.totalPlayers;
+        document.getElementById("totalTeams").innerText = teams.length;
 
-document.getElementById("feesCollected").textContent =
-"₹" + dashboardData.feesCollected.toLocaleString("en-IN");
+        const latestTeams = document.getElementById("latestTeams");
 
-document.getElementById("recentRegistrations").textContent =
-dashboardData.recentRegistrations;
+        latestTeams.innerHTML = "";
+
+        teams.slice(0, 5).forEach(team => {
+
+            latestTeams.innerHTML += `
+
+                <tr>
+
+                    <td>${team.id}</td>
+
+                    <td>${team.team_name}</td>
+
+                </tr>
+
+            `;
+
+        });
+
+        // Load Tournaments
+        const tournamentResponse = await fetch(TOURNAMENT_API);
+        const tournamentResult = await tournamentResponse.json();
+
+        const tournaments = tournamentResult.success
+            ? tournamentResult.data
+            : [];
+
+        document.getElementById("totalTournaments").innerText = tournaments.length;
+
+        // Temporary values until Player & Match modules are built
+        document.getElementById("totalPlayers").innerText = "0";
+        document.getElementById("totalMatches").innerText = "0";
+
+    } catch (error) {
+
+        console.error(error);
+
+    }
+
+}
+
+loadDashboard();

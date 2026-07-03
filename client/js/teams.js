@@ -9,8 +9,14 @@ const formTitle = document.getElementById("formTitle");
 const submitBtn = document.getElementById("submitBtn");
 const cancelEdit = document.getElementById("cancelEdit");
 
+const toast = document.getElementById("toast");
+const modal = document.getElementById("confirmModal");
+const confirmDelete = document.getElementById("confirmDelete");
+const cancelDelete = document.getElementById("cancelDelete");
+
 let teams = [];
 let editId = null;
+let deleteId = null;
 
 async function loadTeams() {
 
@@ -32,7 +38,6 @@ function renderTeams(data) {
     data.forEach(team => {
 
         teamTable.innerHTML += `
-
         <tr>
 
             <td>${team.id}</td>
@@ -49,7 +54,7 @@ function renderTeams(data) {
                 </button>
 
                 <button class="delete-btn"
-                onclick="deleteTeam(${team.id})">
+                onclick="showDeleteModal(${team.id})">
 
                 🗑
 
@@ -58,7 +63,6 @@ function renderTeams(data) {
             </td>
 
         </tr>
-
         `;
 
     });
@@ -87,6 +91,8 @@ teamForm.addEventListener("submit", async (e) => {
 
         });
 
+        showToast("Team Added Successfully");
+
     } else {
 
         await fetch(`${API_URL}/${editId}`, {
@@ -101,6 +107,8 @@ teamForm.addEventListener("submit", async (e) => {
 
         });
 
+        showToast("Team Updated Successfully");
+
         resetForm();
 
     }
@@ -111,62 +119,94 @@ teamForm.addEventListener("submit", async (e) => {
 
 });
 
-async function deleteTeam(id) {
+function editTeam(id,name){
 
-    if (!confirm("Delete Team?")) return;
+    editId=id;
 
-    await fetch(`${API_URL}/${id}`, {
+    document.getElementById("team_name").value=name;
 
-        method: "DELETE"
+    formTitle.innerText="Edit Team";
 
-    });
+    submitBtn.innerText="Update Team";
 
-    loadTeams();
-
-}
-
-function editTeam(id, name) {
-
-    editId = id;
-
-    document.getElementById("team_name").value = name;
-
-    formTitle.innerText = "Edit Team";
-
-    submitBtn.innerText = "Update Team";
-
-    cancelEdit.style.display = "inline-block";
+    cancelEdit.style.display="inline-block";
 
 }
 
-cancelEdit.addEventListener("click", resetForm);
+cancelEdit.onclick=resetForm;
 
-function resetForm() {
+function resetForm(){
 
-    editId = null;
+    editId=null;
 
-    formTitle.innerText = "Add Team";
+    formTitle.innerText="Add Team";
 
-    submitBtn.innerText = "Add Team";
+    submitBtn.innerText="Add Team";
 
-    cancelEdit.style.display = "none";
+    cancelEdit.style.display="none";
 
     teamForm.reset();
 
 }
 
-searchTeam.addEventListener("keyup", () => {
+function showDeleteModal(id){
 
-    const keyword = searchTeam.value.toLowerCase();
+    deleteId=id;
+
+    modal.style.display="flex";
+
+}
+
+cancelDelete.onclick=()=>{
+
+    modal.style.display="none";
+
+};
+
+confirmDelete.onclick=async()=>{
+
+    await fetch(`${API_URL}/${deleteId}`,{
+
+        method:"DELETE"
+
+    });
+
+    modal.style.display="none";
+
+    showToast("Team Deleted Successfully");
+
+    loadTeams();
+
+};
+
+searchTeam.addEventListener("keyup",()=>{
+
+    const keyword=searchTeam.value.toLowerCase();
 
     renderTeams(
 
-        teams.filter(team =>
+        teams.filter(team=>
+
             team.team_name.toLowerCase().includes(keyword)
+
         )
 
     );
 
 });
+
+function showToast(message){
+
+    toast.innerText=message;
+
+    toast.classList.add("show");
+
+    setTimeout(()=>{
+
+        toast.classList.remove("show");
+
+    },3000);
+
+}
 
 loadTeams();

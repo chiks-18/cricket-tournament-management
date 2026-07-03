@@ -1,11 +1,14 @@
 const db = require("../config/database");
 
+// ==============================
 // Get All Tournaments
-const getTournaments = (req, res) => {
+// ==============================
+
+exports.getTournaments = (req, res) => {
 
     const sql = "SELECT * FROM tournaments ORDER BY id DESC";
 
-    db.query(sql, (err, results) => {
+    db.query(sql, (err, result) => {
 
         if (err) {
             return res.status(500).json({
@@ -14,17 +17,20 @@ const getTournaments = (req, res) => {
             });
         }
 
-        res.status(200).json({
+        res.json({
             success: true,
-            data: results
+            data: result
         });
 
     });
 
 };
 
+// ==============================
 // Add Tournament
-const addTournament = (req, res) => {
+// ==============================
+
+exports.addTournament = (req, res) => {
 
     const {
         tournament_name,
@@ -37,26 +43,8 @@ const addTournament = (req, res) => {
         overs,
         max_teams,
         entry_fee,
-        prize_pool,
-        status
+        prize_pool
     } = req.body;
-
-    if (
-        !tournament_name ||
-        !organizer_name ||
-        !location ||
-        !start_date ||
-        !end_date ||
-        !ball_type ||
-        !match_type ||
-        !overs ||
-        !max_teams
-    ) {
-        return res.status(400).json({
-            success: false,
-            message: "Please fill all required fields."
-        });
-    }
 
     const sql = `
         INSERT INTO tournaments
@@ -71,10 +59,9 @@ const addTournament = (req, res) => {
             overs,
             max_teams,
             entry_fee,
-            prize_pool,
-            status
+            prize_pool
         )
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        VALUES (?,?,?,?,?,?,?,?,?,?,?)
     `;
 
     db.query(
@@ -90,8 +77,7 @@ const addTournament = (req, res) => {
             overs,
             max_teams,
             entry_fee,
-            prize_pool,
-            status
+            prize_pool
         ],
         (err, result) => {
 
@@ -102,7 +88,7 @@ const addTournament = (req, res) => {
                 });
             }
 
-            res.status(201).json({
+            res.json({
                 success: true,
                 message: "Tournament created successfully.",
                 tournamentId: result.insertId
@@ -113,14 +99,15 @@ const addTournament = (req, res) => {
 
 };
 
+// ==============================
 // Delete Tournament
-const deleteTournament = (req, res) => {
+// ==============================
 
-    const { id } = req.params;
+exports.deleteTournament = (req, res) => {
 
     db.query(
-        "DELETE FROM tournaments WHERE id = ?",
-        [id],
+        "DELETE FROM tournaments WHERE id=?",
+        [req.params.id],
         (err) => {
 
             if (err) {
@@ -130,7 +117,7 @@ const deleteTournament = (req, res) => {
                 });
             }
 
-            res.status(200).json({
+            res.json({
                 success: true,
                 message: "Tournament deleted successfully."
             });
@@ -138,10 +125,4 @@ const deleteTournament = (req, res) => {
         }
     );
 
-};
-
-module.exports = {
-    getTournaments,
-    addTournament,
-    deleteTournament
 };

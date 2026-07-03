@@ -2,16 +2,15 @@ const express = require("express");
 
 const router = express.Router();
 
-const {
-    getTournaments,
-    addTournament,
-    deleteTournament
-} = require("../controllers/tournamentController");
+const tournamentController = require("../controllers/tournamentController");
 
-router.get("/", getTournaments);
+// Get All Tournaments
+router.get("/", tournamentController.getTournaments);
 
-router.post("/", addTournament);
+// Add Tournament
+router.post("/", tournamentController.addTournament);
 
-router.delete("/:id", deleteTournament);
+// Delete Tournament
+router.delete("/:id", tournamentController.deleteTournament);
 
 module.exports = router;

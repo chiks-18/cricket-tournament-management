@@ -1,62 +1,68 @@
-.input-box{
+/* Toast */
 
-    width:350px;
-    padding:12px;
-    border:1px solid #ccc;
-    border-radius:8px;
-    font-size:16px;
-    margin-right:10px;
+#toast{
 
-}
-
-.search-box{
-
-    width:250px;
-    padding:10px;
-    border:1px solid #ccc;
-    border-radius:8px;
-
-}
-
-.table-header{
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-}
-
-.edit-btn{
-
+    position:fixed;
+    top:25px;
+    right:25px;
     background:#10b981;
     color:white;
-    border:none;
-    padding:8px 12px;
-    border-radius:6px;
-    cursor:pointer;
-    margin-right:8px;
+    padding:15px 25px;
+    border-radius:8px;
+    box-shadow:0 8px 20px rgba(0,0,0,.2);
+    opacity:0;
+    transition:.4s;
+    z-index:1000;
 
 }
 
-.delete-btn{
+#toast.show{
+
+    opacity:1;
+
+}
+
+/* Modal */
+
+.modal{
+
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.45);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:999;
+
+}
+
+.modal-content{
+
+    width:350px;
+    background:white;
+    border-radius:12px;
+    padding:25px;
+    text-align:center;
+
+}
+
+.modal-buttons{
+
+    margin-top:20px;
+    display:flex;
+    justify-content:center;
+    gap:15px;
+
+}
+
+.danger-btn{
 
     background:#ef4444;
-    color:white;
-    border:none;
-    padding:8px 12px;
-    border-radius:6px;
-    cursor:pointer;
 
 }
 
-.edit-btn:hover{
+.danger-btn:hover{
 
-    opacity:.9;
-
-}
-
-.delete-btn:hover{
-
-    opacity:.9;
+    background:#dc2626;
 
 }
